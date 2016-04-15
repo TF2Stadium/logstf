@@ -1,5 +1,12 @@
 package logstf
 
+import (
+	"encoding/json"
+	"net/http"
+	"strconv"
+	"time"
+)
+
 type PlayerStats struct {
 	Team       string       `json:"team"`
 	Classes    []string     `json:"classes"`
@@ -100,4 +107,20 @@ type Logs struct {
 	HealSpread  map[string]map[string]int `json:"healspread"`
 
 	Chat []ChatMessage `json:"chat"`
+}
+
+var client = &http.Client{
+	Timeout: 10 * time.Second,
+}
+
+func GetLogs(logsID int) (*Logs, error) {
+	logs := &Logs{}
+
+	resp, err := client.Get("http://logs.tf/json/" + strconv.Itoa(logsID))
+	if err != nil {
+		return nil, err
+	}
+
+	err = json.NewDecoder(resp.Body).Decode(logs)
+	return logs, err
 }
