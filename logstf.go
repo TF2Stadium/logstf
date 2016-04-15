@@ -35,7 +35,7 @@ type ClassStats struct {
 	Assists   int    `json:"assists"`
 	Deaths    int    `json:"deaths"`
 	Damage    int    `json:"dmg"`
-	TotalTime int    `json:"total_time"`
+	TotalTime int    `json:"total_time"` //time played in seconds
 	Type      string `json:"type"`
 }
 
