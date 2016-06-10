@@ -17,6 +17,7 @@ type PlayerStats struct {
 	Kpd        string       `json:"kpd"`
 	Damage     int          `json:"dmg"`
 	Lks        int          `json:"lks"`
+	Airshots   int          `json:"as"`
 	Dapd       int          `json:"dapd"`
 	Dapm       int          `json:"dapm"` // damage per minute
 	Ubers      int          `json:"ubers"`
