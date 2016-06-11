@@ -8,27 +8,41 @@ import (
 )
 
 type PlayerStats struct {
-	Team       string       `json:"team"`
-	Classes    []string     `json:"classes"`
-	Kills      int          `json:"kills"`
-	Deaths     int          `json:"deaths"`
-	Assists    int          `json:"assists"`
-	Kapd       string       `json:"kapd"`
-	Kpd        string       `json:"kpd"`
-	Damage     int          `json:"dmg"`
-	Lks        int          `json:"lks"`
-	Airshots   int          `json:"as"`
-	Dapd       int          `json:"dapd"`
-	Dapm       int          `json:"dapm"` // damage per minute
-	Ubers      int          `json:"ubers"`
-	Drops      int          `json:"drops"`
-	Backstabs  int          `json:"backstabs"`
-	Headshots  int          `json:"headshots"`
-	Heal       int          `json:"heal"`
-	Cpc        int          `json:"cpc"`
-	Ic         int          `json:"ic"`
-	Medkits    int          `json:"medkits"`
-	ClassStats []ClassStats `json:"class_stats"`
+	Team          string         `json:"team"`
+	Classes       []string       `json:"classes"`
+	Kills         int            `json:"kills"`
+	Deaths        int            `json:"deaths"`
+	Assists       int            `json:"assists"`
+	Kapd          string         `json:"kapd"`
+	Kpd           string         `json:"kpd"`
+	Damage        int            `json:"dmg"`
+	Lks           int            `json:"lks"`
+	Airshots      int            `json:"as"`
+	Dapd          int            `json:"dapd"`
+	Dapm          int            `json:"dapm"` // damage per minute
+	Ubers         int            `json:"ubers"`
+	UberTypes     map[string]int `json:"ubertypes"`
+	Drops         int            `json:"drops"`
+	Backstabs     int            `json:"backstabs"`
+	Headshots     int            `json:"headshots"`
+	Heal          int            `json:"heal"`
+	HealsReceiver int            `json:"hr"`
+	Cpc           int            `json:"cpc"`
+	Ic            int            `json:"ic"`
+	Medkits       int            `json:"medkits"`
+	ClassStats    []ClassStats   `json:"class_stats"`
+	MedicStats    MedicStats     `json:"medicstats"`
+}
+
+type MedicStats struct {
+	AdvantagesLost           int     `json:"advantages_lost"`
+	BiggestAdvantageLost     int     `json:"biggest_advantage_lost"`
+	DeathsWithin20SAfterUber int     `json:"deaths_within_20s_after_uber"`
+	DeathsWith9599Uber       int     `json:"deaths_with_95_99_uber"`
+	AvgTimeBeforeHealing     float64 `json:"avg_time_before_healing"`
+	AvgTimeToBuild           int     `json:"avg_time_to_build"`
+	AvgTimeBeforeUsing       float64 `json:"avg_time_before_using"`
+	AvgUberLength            float64 `json:"avg_uber_length"`
 }
 
 type ClassStats struct {
