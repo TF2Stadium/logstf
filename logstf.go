@@ -35,14 +35,14 @@ type PlayerStats struct {
 }
 
 type MedicStats struct {
-	AdvantagesLost           int     `json:"advantages_lost"`
-	BiggestAdvantageLost     int     `json:"biggest_advantage_lost"`
-	DeathsWithin20SAfterUber int     `json:"deaths_within_20s_after_uber"`
-	DeathsWith9599Uber       int     `json:"deaths_with_95_99_uber"`
-	AvgTimeBeforeHealing     float64 `json:"avg_time_before_healing"`
-	AvgTimeToBuild           int     `json:"avg_time_to_build"`
-	AvgTimeBeforeUsing       float64 `json:"avg_time_before_using"`
-	AvgUberLength            float64 `json:"avg_uber_length"`
+	AdvantagesLost           json.Number `json:"advantages_lost"`
+	BiggestAdvantageLost     json.Number `json:"biggest_advantage_lost"`
+	DeathsWithin20SAfterUber json.Number `json:"deaths_within_20s_after_uber"`
+	DeathsWith9599Uber       json.Number `json:"deaths_with_95_99_uber"`
+	AvgTimeBeforeHealing     json.Number `json:"avg_time_before_healing"`
+	AvgTimeToBuild           json.Number `json:"avg_time_to_build"`
+	AvgTimeBeforeUsing       json.Number `json:"avg_time_before_using"`
+	AvgUberLength            json.Number `json:"avg_uber_length"`
 }
 
 type ClassStats struct {
