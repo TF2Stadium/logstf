@@ -26,7 +26,7 @@ type PlayerStats struct {
 	Backstabs     int            `json:"backstabs"`
 	Headshots     int            `json:"headshots"`
 	Heal          int            `json:"heal"`
-	HealsReceiver int            `json:"hr"`
+	HealsReceived int            `json:"hr"`
 	Cpc           int            `json:"cpc"`
 	Ic            int            `json:"ic"`
 	Medkits       int            `json:"medkits"`
